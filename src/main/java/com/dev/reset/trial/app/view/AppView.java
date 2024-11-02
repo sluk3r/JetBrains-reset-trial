@@ -1,7 +1,7 @@
 package com.dev.reset.trial.app.view;
 
 import com.dev.reset.trial.app.controllers.AppController;
-import com.dev.reset.trial.app.utils.WrapLayout;
+import com.dev.reset.trial.app.utils.ResponsiveLayout;
 import com.formdev.flatlaf.FlatClientProperties;
 import com.formdev.flatlaf.extras.FlatSVGIcon;
 
@@ -31,7 +31,12 @@ public class AppView extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(400, 405));
         setResizable(false);
 
-        paneProducts.setLayout(new WrapLayout(FlowLayout.LEFT, 5, 5));
+        ResponsiveLayout responsiveLayout = new ResponsiveLayout(ResponsiveLayout.JustifyContent.FIT_CONTENT);
+        responsiveLayout.setSize(new Dimension(180, 38));
+        responsiveLayout.setHorizontalGap(5);
+        responsiveLayout.setVerticalGap(5);
+        paneProducts.setLayout(responsiveLayout);
+
         jScrollProduct.setViewportView(paneProducts);
         styleJScrollPane(paneProducts);
 
